@@ -1,0 +1,113 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #fff;
+}
+
+h1, h2, h3 {
+    color: #f5ba13;
+}
+
+a {
+    color: #f5ba13;
+    text-decoration: none;
+}
+
+.intro {
+    background: linear-gradient(to right, #1a1a1a, #333);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #f5ba13;
+    color: #000;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+section {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background: #1e1e1e;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.project-card {
+    background: #1e1e1e;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: block;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(245, 186, 19, 0.5);
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+form button {
+    background: #f5ba13;
+    color: #000;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1a1a1a;
+    margin-top: 20px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+    text-align: center;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
