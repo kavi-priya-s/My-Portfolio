@@ -4,71 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kavipriya S - Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Playfair+Display:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="intro fade-in">
-    <div class="intro-content">
-        <h1>Kavipriya S</h1>
-        <p>Engineering Student | Java Enthusiast | Programmer</p>
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="#contact" class="btn">Contact Me</a>
-    </div>
-</header>
+<div class="container">
+    <nav class="sidebar">
+        <div class="logo">
+            <h1>K</h1>
+            <span>Kavipriya S</span>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/kavipriya-s-697472257/" target="_blank">LI</a>
+            <a href="https://github.com" target="_blank">GH</a>
+        </div>
+    </nav>
 
-<section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>I am a Computer and Communication Engineering student passionate about programming, problem-solving, and building creative applications. Skilled in Java, Python, C, SQL, HTML5, CSS3, and JavaScript, with experience using Canva and basic Figma for design. Always eager to learn and apply new technologies in practical scenarios.</p>
-</section>
+    <main class="main-content">
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>Hi,<br>I'm <span class="glitch-text" data-text="Kavipriya">Kavipriya</span>,</h1>
+                <h2>a CCE Student.</h2>
+                <p>AI Enthusiast / Java Developer / Web Developer</p>
+                <a href="#contact" class="btn glitch-text" data-text="Contact me!">Contact me!</a>
+            </div>
+            <div class="scroll-down">
+                <span>scroll down</span>
+                <span class="arrow">&darr;</span>
+            </div>
+        </section>
 
-<section id="skills" class="fade-in">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-        <li>Java</li>
-        <li>Python</li>
-        <li>C</li>
-        <li>SQL</li>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>Canva</li>
-        <li>Basic Figma</li>
-    </ul>
-</section>
+        <section id="about" class="content-section">
+            <h2 class="section-title"><span>01</span>Me, Myself and I</h2>
+            <p>I am a Computer and Communication Engineering student with strong expertise in programming, AI, and web development. I specialize in building practical solutions that combine deep learning, software development, and intuitive user interfaces. I have successfully developed a deep learning-based pest recognition system, Java-based applications, and interactive web projects. Recognized for my work with a Best Paper Award at ICCCT 2025, I am continuously learning new technologies to create impactful, real-world applications.</p>
+        </section>
 
-<section id="projects" class="fade-in">
-    <h2>Projects</h2>
-    <div class="project-card">
-        <h3>Pest Recognition and Pesticide Recommendation System</h3>
-        <p>Major academic project where I developed a deep learning model using a fine-tuned ResNet-34 to classify paddy pests with 89.45% accuracy. Includes a rule-based module to suggest suitable pesticides and a Flask-based web interface for real-time predictions.</p>
-    </div>
-    <div class="project-card">
-        <h3>ATM Simulator - Java Console Application</h3>
-        <p>Console-based banking application built using Java and OOP concepts. Features include account creation, deposits, withdrawals, balance inquiry, and a mini statement showing recent transactions. Includes a dual PIN setup for security and processed 150+ transactions in testing.</p>
-    </div>
-    <div class="project-card">
-        <h3>Virtual Pet Simulator (Base/Learning Project)</h3>
-        <p>Beginner-friendly project to learn programming fundamentals. Users can feed, play with, and care for a virtual pet while tracking hunger, happiness, and energy levels.</p>
-    </div>
-</section>
+        <section id="skills" class="content-section">
+            <h2 class="section-title"><span>02</span>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li class="glitch-text" data-text="Java">Java</li>
+                        <li class="glitch-text" data-text="Python">Python</li>
+                        <li class="glitch-text" data-text="C">C</li>
+                        <li class="glitch-text" data-text="SQL">SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li class="glitch-text" data-text="HTML5">HTML5</li>
+                        <li class="glitch-text" data-text="CSS3">CSS3</li>
+                        <li class="glitch-text" data-text="JavaScript">JavaScript</li>
+                        <li class="glitch-text" data-text="Flask">Flask</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases & Tools</h3>
+                    <ul>
+                        <li class="glitch-text" data-text="MySQL">MySQL</li>
+                        <li class="glitch-text" data-text="Git/GitHub">Git/GitHub</li>
+                        <li class="glitch-text" data-text="Canva">Canva</li>
+                        <li class="glitch-text" data-text="Figma (basic)">Figma (basic)</li>
+                    </ul>
+                </div>
+                 <div class="skill-category">
+                    <h3>Core Concepts</h3>
+                    <ul>
+                        <li class="glitch-text" data-text="OOP">OOP</li>
+                        <li class="glitch-text" data-text="DBMS">DBMS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:kavipriyasenthamil@gmail.com">kavipriyasenthamil@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/kavipriya-s-697472257/" target="_blank">linkedin.com/in/kavipriya-s</a></p>
-    <form onsubmit="sendMessage(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-</section>
+        <section id="projects" class="content-section">
+            <h2 class="section-title"><span>03</span>My Work</h2>
+             <div class="project">
+                <h3>Pest Recognition & Pesticide Recommendation System</h3>
+                <p>Developed a fine-tuned ResNet-34 deep learning model to classify paddy pests with 89.45% accuracy. Implemented a rule-based pesticide recommendation system and deployed it via a Flask web interface for real-time predictions. Recognized with the <strong>Best Paper Award at the 5th ICCCT 2025</strong>.</p>
+            </div>
+             <div class="project">
+                <h3>ATM Simulator - Java Console Application</h3>
+                <p>Built a console-based banking application featuring account creation, deposits, withdrawals, mini statements, and dual PIN security. Applied OOP principles for secure and efficient transaction handling, successfully tested with 150+ transactions.</p>
+            </div>
+             <div class="project">
+                <h3>Virtual Pet Simulator</h3>
+                <p>Designed an interactive program to simulate caring for a virtual pet, tracking hunger, happiness, and energy levels. Strengthened programming fundamentals and explored user input handling, loops, and conditional logic in Java.</p>
+            </div>
+        </section>
 
-<footer>
-    <p>© 2025 Kavipriya S</p>
-</footer>
+        <section id="contact" class="content-section">
+            <h2 class="section-title"><span>04</span>Contact Me</h2>
+            <p>Have a project in mind or just want to say hello? Feel free to reach out!</p>
+            <p>Email: <a href="mailto:kavipriyasenthamil@gmail.com">kavipriyasenthamil@gmail.com</a></p>
+            <form onsubmit="sendMessage(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
 
-<script src="script.js"></script>
+        <footer>
+            <p>© 2025 Kavipriya S</p>
+        </footer>
+    </main>
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>
+
