@@ -1,113 +1,409 @@
+:root {
+    --primary-color: #E63946; /* A vibrant red/pink */
+    --secondary-color: #A8DADC; /* A light cyan */
+    --dark-bg: #111827;
+    --text-color: #F1FAEE;
+    --sidebar-width: 250px;
+
+    /* Glitch text specific colors */
+    --glitch-red: #ff0000;
+    --glitch-blue: #00ffff;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
     margin: 0;
     padding: 0;
-    background: #121212;
-    color: #fff;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.7;
 }
 
-h1, h2, h3 {
-    color: #f5ba13;
+.container {
+    display: flex;
 }
 
-a {
-    color: #f5ba13;
-    text-decoration: none;
+/* Sidebar Navigation */
+.sidebar {
+    width: var(--sidebar-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #000;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid #2a2a2a;
 }
 
-.intro {
-    background: linear-gradient(to right, #1a1a1a, #333);
+.logo {
     text-align: center;
-    padding: 80px 20px;
 }
 
-.intro-content h1 {
-    font-size: 2.5rem;
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
 }
 
-.intro-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.logo span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #aaa;
 }
 
-.btn {
-    background: #f5ba13;
-    color: #000;
-    padding: 10px 20px;
-    margin: 5px;
-    display: inline-block;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #ccc;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
     border-radius: 5px;
 }
 
-section {
-    padding: 30px 20px;
-    max-width: 900px;
-    margin: auto;
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
-.skills-list {
+.social-icons a {
+    color: #aaa;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 0 4rem;
+}
+
+.content-section {
+    padding: 6rem 0;
+    border-bottom: 1px solid #2a2a2a;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.section-title span {
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    color: #fff;
+}
+
+.hero-text h1::first-line {
+    color: var(--secondary-color);
+}
+
+.hero-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    writing-mode: vertical-rl;
+    font-size: 0.8rem;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+.scroll-down .arrow {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Glitch Text Effect (Hover Activated) */
+.glitch-text {
+    position: relative;
+    color: var(--primary-color);
+    /* Make the base text transparent on button hover */
+    /* This makes the glitch more prominent on the button */
+}
+
+.btn.glitch-text {
+    color: var(--primary-color) !important;
+}
+
+.btn.glitch-text:hover {
+    color: #fff !important;
+}
+
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-bg);
+    display: none;
+}
+
+.glitch-text:hover::before {
+    display: block;
+    left: 2px;
+    text-shadow: -2px 0 var(--glitch-red);
+    animation: glitch-anim-1 2s infinite alternate-reverse;
+}
+
+.glitch-text:hover::after {
+    display: block;
+    left: -2px;
+    text-shadow: 2px 0 var(--glitch-blue);
+    animation: glitch-anim-2 3s infinite alternate-reverse;
+}
+
+
+/* NEW CSS: Specific styles for glitch on skill items */
+.skill-category li.glitch-text {
+    color: var(--text-color); /* Reset base color for skills */
+    cursor: pointer;
+}
+
+.skill-category li.glitch-text::before,
+.skill-category li.glitch-text::after {
+    background: #1f2937; /* Match the li background color */
+}
+
+.skill-category li.glitch-text:hover {
+    border-left-color: transparent; /* Hide border on hover for a cleaner glitch */
+    color: transparent; /* Hide original text to make glitch more visible */
+}
+
+
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(80% 0 0 0); }
+    15% { clip-path: inset(5% 0 0 0); }
+    30% { clip-path: inset(60% 0 0 0); }
+    45% { clip-path: inset(10% 0 0 0); }
+    60% { clip-path: inset(70% 0 0 0); }
+    75% { clip-path: inset(20% 0 0 0); }
+    90% { clip-path: inset(90% 0 0 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(20% 0 0 0); }
+    15% { clip-path: inset(70% 0 0 0); }
+    30% { clip-path: inset(10% 0 0 0); }
+    45% { clip-path: inset(80% 0 0 0); }
+    60% { clip-path: inset(30% 0 0 0); }
+    75% { clip-path: inset(90% 0 0 0); }
+    90% { clip-path: inset(0 0 0 0); }
+    100% { clip-path: inset(50% 0 0 0); }
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-category ul {
     list-style: none;
     padding: 0;
 }
 
-.skills-list li {
-    background: #1e1e1e;
-    margin: 5px;
-    padding: 10px 15px;
+.skill-category ul li {
+    background-color: #1f2937;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 5px;
+    border-left: 3px solid var(--primary-color);
+    transition: border-left-color 0.3s ease;
 }
 
-.project-card {
-    background: #1e1e1e;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    display: block;
-    color: white;
-    transition: transform 0.3s, box-shadow 0.3s;
-
+/* Projects Section */
+.project {
+    background-color: #1f2937;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.project-card:hover {
+.project:hover {
+    border-left-color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(245, 186, 19, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-form input, form textarea, form button {
+.project h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+/* Contact Section */
+form input,
+form textarea {
     width: 100%;
-    margin: 8px 0;
-    padding: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    color: #fff;
     border-radius: 5px;
-    border: none;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
 }
 
 form button {
-    background: #f5ba13;
-    color: #000;
     cursor: pointer;
+    width: auto;
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 15px;
-    background: #1a1a1a;
-    margin-top: 20px;
+    padding: 2rem 0;
+    color: #888;
+    font-size: 0.9rem;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease;
-    text-align: center;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem 0;
+        border-right: none;
+        border-bottom: 1px solid #2a2a2a;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar ul li a {
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
 }
 
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
